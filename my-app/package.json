@@ -9,9 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@copilotkit/react-core": "^1.9.1",
-    "@copilotkit/react-ui": "^1.9.1",
-    "@copilotkit/runtime": "^1.9.1",
+    "@copilotkit/react-core": "^1.9.2",
+    "@copilotkit/react-textarea": "^1.9.2",
+    "@copilotkit/react-ui": "^1.9.2",
+    "@copilotkit/runtime": "^1.9.2",
     "class-validator": "^0.14.2",
     "next": "15.3.5",
     "react": "^19.0.0",
