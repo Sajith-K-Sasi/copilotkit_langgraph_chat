@@ -4,14 +4,15 @@ from langgraph.graph.message import AnyMessage
 from langgraph.graph import START,END,StateGraph
 from langchain_openai import ChatOpenAI
 from langgraph.checkpoint.memory import MemorySaver
-from langgraph.types import Checkpointer
-import os
+
+from dotenv import load_dotenv
+load_dotenv()
 
 class State(TypedDict):
     messages:Annotated[list[AnyMessage],add_messages]
 
 def chat_node(state:State)->State:
-    model = ChatOpenAI(model_name="gpt-4o",temperature=0,api_key=os.getenv("OPENAI_API_KEY"))
+    model = ChatOpenAI(model_name="gpt-4o",temperature=0)
     state["messages"] = model.invoke(state["messages"])
     return state
     
