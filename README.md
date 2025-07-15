@@ -3,9 +3,10 @@
 
 ## Execute the agent
 1. Move to agent directory `cd my-agent`
-2. Add openai api key to `.env`
-3. Install dependencies using `uv sync`
-4. Run the agent using `uv run server.py`
+2. copy `example.env` to `.env`
+3. Add openai api key to `.env`
+4. Install dependencies using `uv sync`
+5. Run the agent using `uv run server.py`
 
 ---
 
