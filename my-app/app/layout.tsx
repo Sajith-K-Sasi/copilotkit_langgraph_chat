@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { CopilotKit } from "@copilotkit/react-core"; 
+import { CopilotKit } from "@copilotkit/react-core";
 import "@copilotkit/react-ui/styles.css";
 import { CopilotSidebar } from "@copilotkit/react-ui";
 
@@ -30,13 +30,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <CopilotKit 
+        <CopilotKit
           runtimeUrl="/api/copilotkit"
-          agent="agent" // the name of the agent you want to use
-        > 
+          agent="agent"
+          textToSpeechUrl="http://localhost:8000/tts" // Use proxy endpoint
+          transcribeAudioUrl="http://localhost:8000/stt"
+        >
           <CopilotSidebar
             defaultOpen={true}
-            instructions={"You are assisting the user as best as you can. Answer in the best way possible given the data you have."}
+            instructions={
+              "You are assisting the user as best as you can. Answer in the best way possible given the data you have."
+            }
             labels={{
               title: "Sidebar Assistant",
               initial: "How can I help you today?",
